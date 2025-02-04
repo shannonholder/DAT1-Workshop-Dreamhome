@@ -1,4 +1,4 @@
-.open ddlPractise.sqlite
+/*.open ddlPractise.sqlite
 
 DROP TABLE IF EXISTS product; 
 
@@ -11,4 +11,5 @@ CREATE TABLE product(
 );
 
 INSERT INTO product(product_name, list_price, discount) 
-    VALUES('watermelon', '10.50', '4.50'); 
+    VALUES('watermelon', '10.50', '4.50');
+*/ 

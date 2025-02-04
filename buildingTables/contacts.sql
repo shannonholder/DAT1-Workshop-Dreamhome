@@ -7,7 +7,7 @@ CREATE TABLE contact (
     first_name TEXT NOT NULL, 
     last_name TEXT NOT NULL, 
     email TEXT, 
-    phone TEXT NOT NULL CHECK(length (phone) = 10)
+    phone TEXT NOT NULL CHECK(length (phone) >= 10)
 );
 
 INSERT INTO contact (first_name, last_name, email, phone) 
