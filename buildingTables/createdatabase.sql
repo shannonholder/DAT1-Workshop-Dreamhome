@@ -1,10 +1,19 @@
-.open ddlPractise.sqlite
+/*.open ddlPractise.sqlite
+*/
+
+
+/*--switching on referential integrity rules (foreign key rules)
+PRAGMA foreign_keys = ON; --switch foreign keys on (maintaining referential integrity)
 
 --delete the table so it can be recreated every time
+DROP TABLE IF EXISTS appearance; 
 DROP TABLE IF EXISTS contacts;
+/*DROP TABLE IF EXISTS SalesStaff;
+DROP TABLE IF EXISTS Student; 
+*/
 
 --create our first table 
-CREATE TABLE contacts (
+/*CREATE TABLE contacts (
     contactsID INTEGER PRIMARY KEY NOT NULL,
     fname VARCHAR(25),
     lname VARCHAR(25),
@@ -12,13 +21,27 @@ CREATE TABLE contacts (
     phone CHAR(11) DEFAULT '00000000000' CHECK (length(phone) = 11)
 );
 
+CREATE TABLE appearance(
+    appearanceID INTEGER PRIMARY KEY NOT NULL,
+    haircolour VARCHAR (20) CHECK ( haircolour IN ('black', 'brown', 'green', 'blonde')), 
+    wearsglasses BOOLEAN, -- if this is true they wear glasses and if false no glasses
+    contactsID INTEGER, 
+    FOREIGN KEY(contactsID) REFERENCES contacts
+
+);
+*/ 
+
 --insterting data into the table
-INSERT INTO contacts (fname, lname, email, phone)
+/*INSERT INTO contacts (fname, lname, email, phone)
 VALUES ('shannon', 'holder', 'shannon.holder@ada.ac.uk', '01234567891'),
        ('eleanor', 'walsh', 'eleanor.walsh@ada.ac.uk', '01234537332'),
        ('sharn', 'virdi', 'sharn.virdi@ada.ac.uk', '01234567391');
-       
 
+INSERT INTO appearance (haircolour, wearsglasses, contactsID)
+VALUES ('brown', TRUE, 1),
+       ('blonde', TRUE, 2),
+       ('green', FALSE, 3);
+*/
 
 /*CREATE TABLE SalesStaff (
     EmployeeID INTEGER PRIMARY KEY NOT NULL,
