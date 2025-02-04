@@ -40,7 +40,8 @@ VALUES ('Mary Smith', 'Chicago', '312-555-1212', 'Ford', 'GM', ' '),
     StudentID INTEGER PRIMARY KEY NOT NULL,
     StudentName VARCHAR(30),
     MajorName VARCHAR(30),
-    NoOfCreditHours INT 
+    NoOfCreditHours INT,
+    phone CHAR(11) DEFAULT '0000000000' 
 ); 
 
 INSERT INTO Student(StudentName, MajorName, NoOfCreditHours)
@@ -49,9 +50,5 @@ VALUES ('Kirsten', 'Accounting', 152),
        ('Zoe', 'IS', 138),
        ('Ben', 'Accounting', 152);
 */ 
-
-
-
-
 
 
