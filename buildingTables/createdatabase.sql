@@ -1,24 +1,24 @@
 .open ddlPractise.sqlite
 
 --delete the table so it can be recreated every time
-DROP TABLE IF EXISTS Student;
+DROP TABLE IF EXISTS contacts;
 
-/*--create our first table 
+--create our first table 
 CREATE TABLE contacts (
     contactsID INTEGER PRIMARY KEY NOT NULL,
     fname VARCHAR(25),
     lname VARCHAR(25),
-    email VARCHAR(40),
-    phone CHAR(11)
+    email VARCHAR(40) CHECK(email LIKE '%@%'),
+    phone CHAR(11) DEFAULT '00000000000' CHECK (length(phone) = 11)
 );
 
 --insterting data into the table
 INSERT INTO contacts (fname, lname, email, phone)
 VALUES ('shannon', 'holder', 'shannon.holder@ada.ac.uk', '01234567891'),
-       ('eleanor', 'walsh', 'eleanor.walsh@ada.ac.uk', '01234537891'),
+       ('eleanor', 'walsh', 'eleanor.walsh@ada.ac.uk', '01234537332'),
        ('sharn', 'virdi', 'sharn.virdi@ada.ac.uk', '01234567391');
        
-*/
+
 
 /*CREATE TABLE SalesStaff (
     EmployeeID INTEGER PRIMARY KEY NOT NULL,
